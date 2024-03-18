@@ -16,11 +16,14 @@ Bob-->>John: Jolly good!
 
 ```mermaid
 sequenceDiagram
-income->>api: { email, password }
-api-->>db: { email }
-db-->>api: { user: { id, email, name, hash } }
-api-->>api: check hash
-api-->>income: { user: { id, email, name } }
+actor Consumer
+participant API
+database DB
+Consumer->>api: { email, password }
+API-->>DB: { email }
+DB-->>API: { user: { id, email, name, hash } }
+API-->>API: check hash
+API-->>Consumer: { user: { id, email, name } }
 ```
 
 ## Flowchart
