@@ -20,9 +20,13 @@ sequenceDiagram
     participant API
     participant DB
     Consumer->>API: { email, password }
+    activate API
     API-->>DB: { email }
+    activate DB
     DB-->>API: { user: { id, email, name, hash } }
+    deactivate DB
     API-->>API: check hash
+    deactivate API
     API-->>Consumer: { user: { id, email, name } }
 ```
 ```mermaid
