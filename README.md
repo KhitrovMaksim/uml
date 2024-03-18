@@ -18,7 +18,7 @@ sequenceDiagram
 sequenceDiagram
     actor Consumer
     participant API
-    database DB
+    participant DB
     Consumer->>api: { email, password }
     API-->>DB: { email }
     DB-->>API: { user: { id, email, name, hash } }
@@ -28,7 +28,7 @@ sequenceDiagram
 ```mermaid
 sequenceDiagram
     actor A as Alice
-    database J as John
+    participant J as John
     A->>J: Hello John, how are you?
     J->>A: Great!
 ```
