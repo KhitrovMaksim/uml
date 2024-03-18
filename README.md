@@ -19,7 +19,7 @@ sequenceDiagram
     actor Consumer
     participant API
     participant DB
-    Consumer->>api: { email, password }
+    Consumer->>API: { email, password }
     API-->>DB: { email }
     DB-->>API: { user: { id, email, name, hash } }
     API-->>API: check hash
