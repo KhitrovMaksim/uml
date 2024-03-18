@@ -26,8 +26,8 @@ sequenceDiagram
     DB-->>API: { user: { id, email, name, hash } }
     deactivate DB
     API-->>API: check hash
-    deactivate API
     API-->>Consumer: { user: { id, email, name } }
+    deactivate API
 ```
 ```mermaid
 sequenceDiagram
